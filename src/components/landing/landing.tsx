@@ -14,6 +14,7 @@ import logo from '../../assets/images/logo.svg';
 import hero from '../../assets/images/hero.svg';
 import raffleBg from '../../assets/images/raffle-bg.svg';
 import minus from '../../assets/images/minus.svg';
+import plus from '../../assets/images/plus.svg';
 
 // Components
 import Searchbar from '../searchbar/searchbar';
@@ -57,18 +58,31 @@ class Landing extends React.Component {
   minusQuantity(){
     console.warn("minus!");
     let _tempQuantity = this.state.raffleQuantity - 1;
-    let value = Math.max(Number(this.state.raffleLimit.minLimit), Math.min(Number(this.state.raffleLimit.maxLimit), Number(_tempQuantity)));
-    console.warn("value ", value);
-
-    this.setState({raffleQuantity: value});
+    this.validateInput(_tempQuantity);
   }
 
   onChangeQuantity(event: React.FormEvent<HTMLInputElement>){
     let value = event.currentTarget.value;
-    console.warn("value ", value);
-    
-    // value = Math.max(Number(min), Math.min(Number(max), Number(value)));
-    // setTokenQuantity(value)
+    console.warn("value bef", value);
+    this.validateInput(value);
+  }
+
+  plusQuantity(){
+    console.warn("plus! ");
+    let _tempQuantity = this.state.raffleQuantity + 1;
+    this.validateInput(_tempQuantity);
+  }
+
+  validateInput(value: number | string){
+    const newValue = Math.max(Number(this.state.raffleLimit.minLimit), Math.min(Number(this.state.raffleLimit.maxLimit), Number(value)));
+    console.warn("newValue! ", newValue);
+
+    if(isNaN(newValue)){
+      return;
+    }
+    this.setState({raffleQuantity: newValue}, () => {
+      console.warn("check new value ", this.state.raffleQuantity);
+    });
   }
   render(): React.ReactNode {
     return (
@@ -155,7 +169,7 @@ class Landing extends React.Component {
             <h1>Promoted Creations</h1>
 
             <Row>
-              <img src={raffleBg} style={{position: "absolute"}}/>
+              {/* <img src={raffleBg} style={{position: "absolute"}}/> */}
               <Row className="mt">
                 <h3>
                   Mintable Raffle
@@ -165,7 +179,7 @@ class Landing extends React.Component {
                 </h4>
               </Row>
               <Col md={{ span: 5, offset: 4}} className="center">
-                <img src={logo} style={{width: "40rem"}}/>
+                <img src={logo} style={{width: "30rem"}}/>
                 <br></br>
                 <h3>
                   NFTS WORTH UP TO
@@ -176,14 +190,15 @@ class Landing extends React.Component {
                 </h1>
               </Col>
               <Col md={{ span: 4, offset: 4}} className="center">
-
                 <img src={logo} style={{width: "20rem"}}/>
-                <h3>
+                <br></br>
+                <h2>
                   NO OF RAFFLE TICKETS
-                </h3>
-
-                <img className="logo" src={minus} onClick={ _ => this.minusQuantity} />
+                </h2>
+                <br></br>
+                <img className="logo" src={minus} onClick={ _ => this.minusQuantity()} />
                 <input placeholder="Quantity" maxLength={3} onChange={e => this.onChangeQuantity(e)} value={this.state.raffleQuantity}/>
+                <img className="logo" src={plus} onClick={ _ => this.plusQuantity()} />
               </Col>
             </Row>
           <Switch >
