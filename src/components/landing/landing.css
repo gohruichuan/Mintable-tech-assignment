@@ -1,0 +1,20 @@
+.floatRight{
+    float:right;
+}
+
+.logo{
+    width: 3rem;
+}
+
+.navlink{
+    margin-right: 2rem;
+}
+
+.collab{
+    background: #4805D6;
+    text-align: center;
+}
+
+.collab >  p {
+    padding-top: 0.5rem;
+}
