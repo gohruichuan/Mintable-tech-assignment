@@ -55,10 +55,26 @@
     margin-top:3rem;
 }
 
+.mb{
+    margin-bottom:3rem;
+}
+
 .heroText{
     width: 2rem;
 }
 
 .alignLeft{
     text-align: left !important;
+}
+
+.raffleBg{
+    background: url(../../assets/images/raffle-bg.svg) no-repeat;
+    background-size: cover;
+    /* width: 100%;  */
+}
+
+.heroBg{
+    background: url(../../assets/images/hero.svg) no-repeat;
+    background-size: cover;
+    /* width: 100%;  */
 }

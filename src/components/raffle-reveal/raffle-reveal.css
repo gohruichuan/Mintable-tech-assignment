@@ -1,0 +1,32 @@
+.revealnavbar{
+    background: white !important;
+}
+
+.revealnavbar a{
+    color: black !important;
+}
+
+.navlink {
+    /* text-decoration: none !important; */
+    color: black !important;
+}
+
+.wrapper{
+    background: #ececec;
+    /* height: 100vh; */
+}
+
+.floatRight{
+    float:right;
+}
+
+.upload{
+width: 781px;
+height: 448px;
+left: 528px;
+top: 262px;
+
+border: 2px dashed #EAEAFF;
+box-sizing: border-box;
+border-radius: 12px;
+}
