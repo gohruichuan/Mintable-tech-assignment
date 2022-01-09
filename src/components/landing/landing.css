@@ -1,20 +1,64 @@
-.floatRight{
-    float:right;
+.dropdown{
+    background: #4805D6;
+    color: white;
+    border-left: 2px solid #550DED;
+    border-right: 2px solid #550DED;
+    width: 10rem;
 }
-
 .logo{
     width: 3rem;
 }
 
 .navlink{
     margin-right: 2rem;
+    text-decoration: none;
 }
 
 .collab{
     background: #4805D6;
     text-align: center;
+    color: white;
 }
 
-.collab >  p {
+.collab p {
     padding-top: 0.5rem;
+}
+
+.collab a{
+    /* text-decoration: none !important; */
+    color: white !important;
+}
+  
+
+.navbar{
+    background: #550DED;
+    color: white;
+}
+
+.navbar a {
+    /* text-decoration: none !important; */
+    color: white !important;
+}
+
+.subNavbar{
+    /* background: white; */
+    color:black !important
+}
+
+.center {
+    margin: auto;
+    /* width: 50%; */
+    padding: 10px;
+}
+
+.mt{
+    margin-top:3rem;
+}
+
+.heroText{
+    width: 2rem;
+}
+
+.alignLeft{
+    text-align: left !important;
 }

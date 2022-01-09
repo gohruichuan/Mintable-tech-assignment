@@ -1,13 +1,12 @@
 .App {
   text-align: center;
-  color: white;
+  color: black !important;
 }
 
 a{
   /* text-decoration: none !important; */
-  color: white !important;
+  color: black !important;
 }
-
 
 .App-logo {
   height: 40vmin;
